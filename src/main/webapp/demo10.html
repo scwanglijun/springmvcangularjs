@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body style="padding:10px;" ng-app="app">
+<div class="input-group"  ng-controller="AppCtrl">
+    <fieldset>
+        <legend>用户角色</legend>
+        <select ng-model="selectrole">
+            <option value="">请选择...</option>
+            <option  ng-repeat="item in roles "  value="{{item.id}}">{{item.name}}</option>
+        </select>
+    </fieldset>
+    <fieldset>
+         <legend>权限列表</legend>
+         <span ng-repeat="item in rights">
+                <input type="checkbox" value="{{item.id}}" ng-checked="item.checked">{{item.name}}
+         </span>
+    </fieldset>
+</div>
+</body>
+<script type="text/javascript" src="js/angular.js"></script>
+<script type="text/javascript" src="js/demo10.js"></script>
+</html>
